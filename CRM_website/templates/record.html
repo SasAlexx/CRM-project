@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<div class="card" style="width: 35rem;">
+  <div class="card-header" style="background-color: gainsboro">
+      <h1>{{ customer_record.first_name }} {{ customer_record.last_name }}</h1>
+  </div>
+  <ul class="list-group list-group-flush">
+   <li class="list-group-item"><strong>Email:</strong> {{ customer_record.email }}</li>
+    <li class="list-group-item"><Strong>Phone number:</Strong> {{ customer_record.phone }}</li>
+    <li class="list-group-item"><Strong>Country:</Strong> {{ customer_record.country }}</li>
+    <li class="list-group-item"><Strong>City:</Strong> {{ customer_record.city }}</li>
+    <li class="list-group-item"><Strong>Address:</Strong> {{ customer_record.address }}</li>
+    <li class="list-group-item"><Strong>Created at:</Strong> {{ customer_record.time_created }}</li>
+    <li class="list-group-item"><Strong>Created at:</Strong> {{ customer_record.time_updated }}</li>
+    <li class="list-group-item"><Strong>User:</Strong> {{ customer_record.user }}</li>
+  </ul>
+</div>
+
+<br>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+<a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">Delete</a>
+{% endblock %}
